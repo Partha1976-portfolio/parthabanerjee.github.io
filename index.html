@@ -151,25 +151,29 @@
 
   /* Experience Section */
   .exp-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 1000px;
-    margin: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* reduced spacing for tighter look */
+  max-width: 1000px;
+  margin: auto;
+}
+
 
   .exp-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
+  background: #222;
+  padding: 16px 20px; /* reduced from 20px */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
 
   .exp-card:hover { background: #00ffff; color: #000; transform: scale(1.02); }
 
-  .exp-details { display: none; margin-top: 10px; font-size: 0.95rem; color: #fff; }
+ .exp-details ul {
+  margin-top: 8px;
+  line-height: 1.5;
+}
 
   /* Projects Section */
   .proj-container {
@@ -625,6 +629,7 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
 
 
 
