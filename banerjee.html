@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partha K. Banerjee Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Reset and basic styles */
+  * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: unset; }
+  body { font-family: 'Roboto', sans-serif; background-color: #0a0a0a; color: #f5f5f5; line-height: 1.6; }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  header {
+    background: #111;
+    padding: 40px 20px;
+    text-align: center;
+    position: revert;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  }
+
+  header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #00ffff;
+    margin-bottom: 10px;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+    color: #ff00ff;
+    margin-bottom: 10px;
+  }
+
+  header img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #00ffff;
+    object-fit: cover;
+  }
+
+  header span.experience {
+    display: inline-block;
+    margin-top: 5px;
+    background: #ff00ff;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav a {
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  nav a:hover { background: #00ffff; color: #000; }
+
+  section {
+    padding: 30px 0px 20px;
+    min-height: 80vh;
+    transition: all 0.6s ease;
+  }
+
+  section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ff0080;
+  }
+
+  /* Neon section colors */
+  #about { background: #0d0d0d; }
+  #skills { background: #0e0e0e; }
+  #core { background: #0c0c0c; }
+  #experience { background: #0b0b0b; }
+  #projects { background: #0a0a0a; }
+  #education { background: #0d0d0d; }
+  #certificates { background: #0d0d0d; }
+  #contact { background: #111; }
+
+  /* About Section */
+  #about p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  /* Skills Section */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .skill {
+    background: #222;
+    padding: 12px 10px;
+    border-radius: 12px;
+    color: #00ffff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+
+  .skill:hover { background: #00ffff; color: #000; transform: scale(1.05); }
+
+  /* Core Competencies */
+  .core-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .core-card {
+    background: #222;
+    padding: 15px 20px;
+    border-radius: 15px;
+    min-width: 220px;
+    color: #ff00ff;
+    font-weight: 500;
+    transition: 0.3s all;
+  }
+
+  .core-card:hover { background: #ff00ff; color: #000; transform: scale(1.05); }
+
+  /* Experience Section */
+  .exp-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .exp-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .exp-card:hover { background: #00ffff; color: #000; transform: scale(1.02); }
+
+  .exp-details { display: none; margin-top: 10px; font-size: 0.95rem; color: #fff; }
+
+  /* Projects Section */
+  .proj-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .proj-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .proj-card:hover { background: #ff0080; color: #fff; transform: scale(1.02); }
+
+  .proj-details { display: none; margin-top: 10px; font-size: 0.9rem; }
+
+  /* Education Section */
+  .edu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .edu-card {
+    background: #222;
+    padding: 18px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+
+  /* Certificate Button */
+  .cert-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .cert-btn:hover {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+    transform: scale(1.05);
+  }
+
+  /* Contact Section */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-info { text-align: center; font-size: 1.1rem; color: #fff; }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-links a img { width: 30px; transition: transform 0.3s ease; }
+  .social-links a img:hover { transform: scale(1.2); }
+
+  form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  form.contact-form input, form.contact-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  form.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+
+  form.contact-form button:hover { background: #ff00ff; color: #fff; transform: scale(1.05); }
+
+  /* Footer */
+  footer { text-align: center; padding: 20px; background: #111; color: #fff; }
+  /* Certificate Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: #111;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 0 25px #00ffff;
+  animation: fadeIn 0.4s ease;
+}
+
+.close-btn {
+  color: #ff00ff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover { color: #00ffff; transform: scale(1.2); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://media.licdn.com/dms/image/v2/C5603AQFuam_mSDfo5w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1618071099131?e=2147483647&v=beta&t=kG243VGB-brLFrGczrwU9qkFoh94goWloTEG9Ia3L4c" alt="Profile Picture">
+  <h1>Partha K. Banerjee</h1>
+  <h2>Senior Project Manager - Construction & Project Management Consultant (PMC)</h2>
+  <span class="experience">24+ Years Experience</span>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#core">Core Competencies</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Leader, Planner & Achiever with 24 years of experience in Civil & Mechanical Project Management and execution at various phases. Skilled at collaborating with multiple industries and achieving effective management within cost and time deadlines. Experienced in civil, PEB, RCC, structural, residential and industrial projects, site handling, team leading, planning, scheduling, monitoring progress, quality control, safety, cost control, RCC designing, MEP, estimations, budgeting, tendering, BOQ, rate analysis, materials procurement, manpower management, and risk mitigation.
+  </p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-container">
+    <div class="skill">Strategy Planning</div>
+    <div class="skill">High-Rise Construction</div>
+    <div class="skill">Pharmaceuticals & Chemicals</div>
+    <div class="skill">Industrial Projects</div>
+    <div class="skill">HVAC / Cooling Plant</div>
+    <div class="skill">Fire System Installation</div>
+    <div class="skill">Manpower Management</div>
+    <div class="skill">Plumbing & Piping</div>
+    <div class="skill">Cost Control</div>
+    <div class="skill">Project Scheduling</div>
+    <div class="skill">Tendering & Estimations</div>
+    <div class="skill">Quality Control</div>
+    <div class="skill">Site Management</div>
+    <div class="skill">Vendor Management</div>
+    <div class="skill">Quality Assurance</div>
+    <div class="skill">Technical Designing</div>
+  </div>
+</section>
+
+<!-- Core Competencies -->
+<section id="core">
+  <h2>Core Competencies</h2>
+  <div class="core-container">
+    <div class="core-card">Project Planning & Execution</div>
+    <div class="core-card">Team Leadership & Coordination</div>
+    <div class="core-card">Risk Assessment & Mitigation</div>
+    <div class="core-card">Budgeting & Cost Optimization</div>
+    <div class="core-card">Material Procurement & Vendor Management</div>
+    <div class="core-card">Structural & RCC Detailing</div>
+    <div class="core-card">Organisational Skills</div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="exp-container">
+    <!-- (experience cards remain unchanged) -->
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="proj-container">
+    <div class="proj-card" onclick="toggleProj(this)">
+      <strong>Industrial Plant Project</strong>
+      <div class="proj-details">
+        <p>Execution of industrial projects including Chemicals, Pharmaceuticals, High-rise residential, warehouse, ETP, STP, MCC, Power plant.</p>
+      </div>
+    </div>
+    <div class="proj-card" onclick="toggleProj(this)">
+      <strong>High-rise Residential Project</strong>
+      <div class="proj-details">
+        <p>Execution of multi-floor residential projects with RCC, PEB, facade installations, and interior & exterior finishing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu-container">
+    <div class="edu-card">
+      <strong>Graduate in Civil Engineering (GCE)</strong> - IIMRT, Ahmedabad, 2009
+    </div>
+    <div class="edu-card">
+      <strong>Diploma in Civil Engineering</strong> - West Bengal State Technical Council (WBSCTE), 1998
+    </div>
+    <div class="edu-card">
+      <strong>Technical Course in Office Management (Equiv. BBA)</strong> - Calcutta University, 1997
+    </div>
+    <div class="edu-card">
+      <strong>H.Sc. (10+2) with Physics, Chemistry, Mathematics</strong> - WBBHSC, 1994
+    </div>
+  </div>
+</section>
+
+
+<!-- Certificates -->
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="edu-container">
+    <div class="edu-card">
+      <strong>Project Management (Short Course)</strong><br>
+      <em>Oxford Home Study Centre – Enrolled on 18th March 2024</em><br>
+      Registration Number: 684078 | Letter Number: RL196406
+      <br><br>
+      <button class="cert-btn" onclick="openCert()">View Certificate</button>
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div id="certModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeCert()">&times;</span>
+    <iframe src="c:\Users\parth\Downloads\PMP certificate.pdf" width="100%" height="600px" style="border:none; border-radius:10px;"></iframe>
+  </div>
+</div>
+
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <p>Email: parthabanerjee1976@yahoo.in</p>
+      <p>Phone: +91-9824331080</p>
+      <p>Location: Mumbai, Maharashtra</p>
+    </div>
+
+    <div class="social-links">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+    </div>
+
+    <form class="contact-form" action="mailto:parthabanerjee1976@yahoo.in" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Partha K. Banerjee. All Rights Reserved.
+</footer>
+
+<script>
+  // Toggle Experience Details
+  function toggleExp(card){
+    const details = card.querySelector('.exp-details');
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Toggle Project Details
+  function toggleProj(card){
+    const details = card.querySelector('.proj-details');
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  }
+  // Certificate Modal
+function openCert() {
+  document.getElementById('certModal').style.display = 'block';
+}
+
+function closeCert() {
+  document.getElementById('certModal').style.display = 'none';
+}
+
+// Close modal when clicking outside content
+window.onclick = function(event) {
+  const modal = document.getElementById('certModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+</script>
+
+</body>
+</html>
