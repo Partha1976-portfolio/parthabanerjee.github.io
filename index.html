@@ -19,6 +19,25 @@ body {
   color: #f5f5f5;
   line-height: 1.6;
 }
+  /* 🌟 Header Fade-in Animation */
+header {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: headerFadeIn 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Keyframes for smooth gradient motion */
 @keyframes gradientBG {
@@ -44,12 +63,20 @@ body {
     box-shadow: 0 0 20px rgba(0,255,255,0.1);
   }
 
-  header h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 3rem;
-    color: #00ffff;
-    margin-bottom: 10px;
+ /* Soft glow entry for name */
+header h1 {
+  animation: textGlow 2s ease-in-out 1.5s forwards;
+  opacity: 0;
+}
+
+@keyframes textGlow {
+  0% { opacity: 0; text-shadow: none; }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 8px #00ffff, 0 0 15px #ff00ff;
   }
+}
+
 
   header h2 {
     font-size: 1.5rem;
@@ -167,44 +194,28 @@ body {
   .core-card:hover { background: #ff00ff; color: #000; transform: scale(1.05); }
 
   /* Experience Section */
-  .exp-container {
- {
-  position: relative;
-  padding-left: 50px;
+ .exp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-#experience::before {
-  content: "";
-  position: absolute;
-  top: 100px;
-  left: 35px;
-  width: 3px;
-  height: calc(100% - 200px);
-  background: linear-gradient(to bottom, #ff00ff, #00ffff);
-  border-radius: 2px;
-  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-  animation: glowLine 3s linear infinite alternate;
-}
-
-
-  .exp-card {
-  position: relative;
-  background: #1a1a1a;
-  border-radius: 14px;
+.exp-card {
+  background: #222;
   padding: 16px 20px;
-  margin-left: 20px;
-  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+  border-radius: 12px;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
-/* Glow animation for timeline line */
-@keyframes glowLine {
-  0% { box-shadow: 0 0 10px #00ffff, 0 0 15px #ff00ff; }
-  100% { box-shadow: 0 0 25px #ff00ff, 0 0 30px #00ffff; }
+
+.exp-card:hover {
+  background: #00ffff;
+  color: #000;
+  transform: scale(1.02);
 }
-  /* Soft pulsing effect for dots */
-@keyframes pulseDot {
-  0% { transform: scale(1); opacity: 0.9; }
-  100% { transform: scale(1.2); opacity: 1; }
+
 }
 
   .exp-card:box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
@@ -358,6 +369,17 @@ body {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+/* 🌙 Smooth Fade-In Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 </style>
@@ -383,7 +405,7 @@ body {
 </header>
 
 <!-- About -->
-<section id="about">
+<section id="about" class="fade-in">
   <h2>About Me</h2>
   <p>
     Leader, Planner & Achiever with 24 years of experience in Civil & Mechanical Project Management and execution at various phases. Skilled at collaborating with multiple industries and achieving effective management within cost and time deadlines. Experienced in civil, PEB, RCC, structural, residential and industrial projects, site handling, team leading, planning, scheduling, monitoring progress, quality control, safety, cost control, RCC designing, MEP, estimations, budgeting, tendering, BOQ, rate analysis, materials procurement, manpower management, and risk mitigation.
@@ -391,7 +413,7 @@ body {
 </section>
 
 <!-- Skills -->
-<section id="skills">
+<section id="skills" class="fade-in">
   <h2>Skills</h2>
   <div class="skills-container">
     <div class="skill">Strategy Planning</div>
@@ -414,7 +436,7 @@ body {
 </section>
 
 <!-- Core Competencies -->
-<section id="core">
+<section id="core" class="fade-in">
   <h2>Core Competencies</h2>
   <div class="core-container">
     <div class="core-card">Project Planning & Execution</div>
@@ -429,7 +451,7 @@ body {
 
 <!-- Experience -->
 <!-- Experience -->
-<section id="experience">
+<section id="experience" class="fade-in">
   <h2>Experience</h2>
   <div class="exp-container">
 
@@ -550,7 +572,7 @@ body {
 </section>
 
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="fade-in">
   <h2>Projects</h2>
   <div class="proj-container">
     <div class="proj-card" onclick="toggleProj(this)">
@@ -569,7 +591,7 @@ body {
 </section>
 
 <!-- Education -->
-<section id="education">
+<section id="education" class="fade-in">
   <h2>Education</h2>
   <div class="edu-container">
     <div class="edu-card">
@@ -589,7 +611,7 @@ body {
 
 
 <!-- Certificates -->
-<section id="certificates">
+<section id="certificates" class="fade-in">
   <h2>Certificates</h2>
   <div class="edu-container">
     <div class="edu-card">
@@ -612,7 +634,7 @@ body {
 
 
 <!-- Contact -->
-<section id="contact">
+<section id="contact" class="fade-in">
   <h2>Get In Touch</h2>
   <div class="contact-container">
     <div class="contact-info">
@@ -664,11 +686,27 @@ window.onclick = function(event) {
     modal.style.display = 'none';
   }
 };
+  // 🌙 Fade-in on scroll
+const fadeEls = document.querySelectorAll('.fade-in');
+
+function fadeInOnScroll() {
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+
 
 </script>
 
 </body>
 </html>
+
 
 
 
