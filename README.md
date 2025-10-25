@@ -45,17 +45,9 @@ This portfolio represents the professional journey of **Partha K. Banerjee**, fe
 
 ## 🚀 Live Website
 🔗 Visit the live portfolio here:  
-👉 **[https://yourusername.github.io](https://yourusername.github.io)**  
-*(Replace `yourusername` with your actual GitHub username)*
+👉 **[[(https://partha1976-portfolio.github.io/parthabanerjee.github.io/)]]**  
 
----
 
-## 🧩 How to Update
-1. Edit your local portfolio files (`index.html`, `style.css`, etc.).
-2. Commit and push updates to the `main` branch.
-3. GitHub Pages automatically redeploys your live site within seconds.
-
----
 
 ## 📬 Contact
 📧 **parthabanerjee1976@yahoo.in**  
