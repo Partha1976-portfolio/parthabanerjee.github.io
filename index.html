@@ -227,14 +227,12 @@ header h1 {
 }
 
   /* Projects Section */
- .proj-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 900px;
-  margin: auto;
-}
-
+  .proj-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
 
   .proj-card {
     background: #222;
@@ -574,29 +572,23 @@ header h1 {
 </section>
 
 <!-- Projects -->
-<!-- Projects -->
-<section id="projects">
+<section id="projects" class="fade-in">
   <h2>Projects</h2>
   <div class="proj-container">
-
-    <div class="proj-card">
+    <div class="proj-card" onclick="toggleProj(this)">
       <strong>Industrial Plant Project</strong>
-      <div class="proj-details" style="display:block;">
+      <div class="proj-details">
         <p>Execution of industrial projects including Chemicals, Pharmaceuticals, High-rise residential, warehouse, ETP, STP, MCC, Power plant.</p>
       </div>
     </div>
-
-    <div class="proj-card">
+    <div class="proj-card" onclick="toggleProj(this)">
       <strong>High-rise Residential Project</strong>
-      <div class="proj-details" style="display:block;">
+      <div class="proj-details">
         <p>Execution of multi-floor residential projects with RCC, PEB, facade installations, and interior & exterior finishing.</p>
       </div>
     </div>
-
   </div>
 </section>
-
-
 
 <!-- Education -->
 <section id="education" class="fade-in">
@@ -673,7 +665,10 @@ header h1 {
 <script>
 
 
- 
+  // Toggle Project Details
+  function toggleProj(card){
+    const details = card.querySelector('.proj-details');
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
   }
   // Certificate Modal
 function openCert() {
@@ -711,8 +706,6 @@ window.addEventListener('load', fadeInOnScroll);
 
 </body>
 </html>
-
-
 
 
 
