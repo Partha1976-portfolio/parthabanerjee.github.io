@@ -228,24 +228,35 @@ header h1 {
 
   /* Projects Section */
   .proj-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  .proj-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 15px;
-    width: 300px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+.proj-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  width: 45%; /* Two boxes per row */
+  min-width: 300px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  cursor: default;
+}
 
-  .proj-card:hover { background: #ff0080; color: #fff; transform: scale(1.02); }
+.proj-card:hover {
+  background: #ff0080;
+  color: #fff;
+  transform: scale(1.02);
+}
 
-  .proj-details { display: none; margin-top: 10px; font-size: 0.9rem; }
+.proj-details {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
 
   /* Education Section */
   .edu-container {
@@ -572,21 +583,51 @@ header h1 {
 </section>
 
 <!-- Projects -->
-<section id="projects" class="fade-in">
+<!-- Projects -->
+<section id="projects">
   <h2>Projects</h2>
   <div class="proj-container">
-    <div class="proj-card" onclick="toggleProj(this)">
+
+    <div class="proj-card">
       <strong>Industrial Plant Project</strong>
-      <div class="proj-details">
-        <p>Execution of industrial projects including Chemicals, Pharmaceuticals, High-rise residential, warehouse, ETP, STP, MCC, Power plant.</p>
+      <div class="proj-details" style="display:block;">
+        <p>
+          Execution of industrial projects including Chemicals, Pharmaceuticals, High-rise residential,
+          warehouse, ETP, STP, MCC, and Power plant.
+        </p>
       </div>
     </div>
-    <div class="proj-card" onclick="toggleProj(this)">
+
+    <div class="proj-card">
       <strong>High-rise Residential Project</strong>
-      <div class="proj-details">
-        <p>Execution of multi-floor residential projects with RCC, PEB, facade installations, and interior & exterior finishing.</p>
+      <div class="proj-details" style="display:block;">
+        <p>
+          Execution of multi-floor residential projects with RCC, PEB, facade installations, and interior
+          & exterior finishing.
+        </p>
       </div>
     </div>
+
+    <div class="proj-card">
+      <strong>Warehouse & Logistics Facility</strong>
+      <div class="proj-details" style="display:block;">
+        <p>
+          Supervised warehouse construction with PEB structure, trimix flooring, and fire safety systems
+          ensuring on-time completion.
+        </p>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <strong>Pharmaceutical & Chemical Plant</strong>
+      <div class="proj-details" style="display:block;">
+        <p>
+          Managed process plant construction with MEP integration, RCC foundations, HVAC, and pipeline
+          installation maintaining quality and safety standards.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -706,6 +747,7 @@ window.addEventListener('load', fadeInOnScroll);
 
 </body>
 </html>
+
 
 
 
